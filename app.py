@@ -2,7 +2,7 @@ from flask import Flask, jsonify, render_template
 import requests
 import threading
 import time
-
+import os
 app = Flask(__name__)
 
 RPI_URL = "http://192.168.137.164:5001/data"  # ← replace with your RPi's IP e.g. 192.168.x.x
@@ -67,4 +67,5 @@ def get_data():
 # -------------------------------
 if __name__ == "__main__":
     threading.Thread(target=poll_rpi, daemon=True).start()
+    port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=5000, debug=False, use_reloader=False)
