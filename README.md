@@ -227,7 +227,6 @@ ESP32 → LoRa → Raspberry Pi → Flask API → Browser
 
 ## ⚠️ Limitations
 
-(From updated report , page 14–15)
 
 * 📡 **Limited LoRa range**
 
